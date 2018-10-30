@@ -3,9 +3,8 @@
 #include <string.h>
 #include "symbol.h"
 
-int errsem = 0;
 int temporales;
-const int id_max = 8;
+const int id_max = 20;
 
 void declarar(char *id){
 	printf("Declare %s, Integer\n", id);
@@ -58,12 +57,12 @@ char* dividir(char *idEntrada1, char *idEntrada2){
 }
 
 void guardar(char *idEntrada, char *idSalida){
-	printf("STORE %s en %s \n", idEntrada, idSalida);
+	printf("Store %s, %s \n", idEntrada, idSalida);
 }
 
 void iniciar(){
 	printf("Load rtlib,\n");
 }
 void detener(){
-	printf("Stop,\n");
+	printf("Stop ,\n");
 }
