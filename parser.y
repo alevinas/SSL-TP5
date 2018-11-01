@@ -34,11 +34,11 @@ program : 		  				PROGRAMA {iniciar();} bloquePrograma FIN {detener(); if (errle
 bloquePrograma : 	  		variables_ code;
 
 variables_ : 		  			VARIABLES
-                        | variables_ DEFINIR IDENTIFICADOR'.'{if(!existe($3)){
+                        | variables_ DEFINIR IDENTIFICADOR{if(!existe($3)){
                                                                 declarar($3);
                                                                 agregar($3);
                                                                 }
-                                                              else{mostrarError($3,0);}}
+                                                              else{mostrarError($3,0);YYERROR;}}'.'
 												| variables_ DEFINIR error'.';
 
 code : 			  					CODIGO sentencia
